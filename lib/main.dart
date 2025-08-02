@@ -1,4 +1,7 @@
 import 'package:evently/ui/screens/home_screen/home_screen.dart';
+import 'package:evently/ui/screens/on_boarding_screen/customize_first_screen.dart';
+import 'package:evently/ui/screens/on_boarding_screen/on_boarding_screen.dart';
+import 'package:evently/ui/utils/app_theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,10 +24,15 @@ class MyApp extends StatelessWidget {
       // Support different screen sizes
       builder: (context, child) {
         return MaterialApp(
+          themeMode: ThemeMode.light,
+          theme: AppTheme.lightMode,
+          darkTheme: AppTheme.darkMode,
           debugShowCheckedModeBanner: false,
-          initialRoute: "/homeScreen",
+          initialRoute: "/personalizeScreen",
           routes: {
             '/homeScreen': (_) => HomeScreen(),
+            "/personalizeScreen": (_) => CustomizeFirstScreen(),
+            "/OnBoardingScreen": (_) => OnBoardingScreen(),
           },
         );
       },
