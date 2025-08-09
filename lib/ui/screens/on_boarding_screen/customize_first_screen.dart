@@ -3,9 +3,10 @@ import 'package:evently/ui/utils/app_colors.dart';
 import 'package:evently/ui/utils/app_fonts.dart';
 import 'package:evently/ui/utils/app_icons.dart';
 import 'package:evently/ui/utils/app_images.dart';
-import 'package:evently/ui/widget/select_button_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../re_widget/select_button_widget.dart';
 
 class CustomizeFirstScreen extends StatefulWidget {
   static const String routeName = '/personalizeScreen';
@@ -42,7 +43,7 @@ class _CustomizeFirstScreenState extends State<CustomizeFirstScreen> {
               ),
               Text(
                 'Choose your preferred theme and language to get started '
-                'with a comfortable, tailored experience that suits your styl',
+                    'with a comfortable, tailored experience that suits your styl',
                 style: AppFonts.darkGray16inter500,
               ),
               Row(
