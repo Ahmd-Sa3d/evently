@@ -23,6 +23,7 @@ class _CustomizeFirstScreenState extends State<CustomizeFirstScreen> {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       backgroundColor: AppColors.whiteBG,
       body: SafeArea(
@@ -62,14 +63,18 @@ class _CustomizeFirstScreenState extends State<CustomizeFirstScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   Text('Theme', style: AppFonts.lightBlue20inter500),
-                  SelectButtonWidget(
-                    buttonKey1: 'sun',
-                    image1: AppICons.sunIcon,
-                    selectColorImage1: AppColors.white,
-                    unSelectSecondColorImage1: Color(0xffff8f00),
-                    image2: AppICons.moonIcon,
-                    buttonKey2: 'moon',
-                    selectColorImage2: AppColors.white,
+                  Container(
+                    decoration: BoxDecoration(
+                      border: Border.all(color: AppColors.lightBlue, width: 3),
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                    ),
+                    child: Row(
+                      spacing: 17,
+                      children: [
+                        Image.asset(AppICons.sunIcon, color: Color(0xffffa000)),
+                        Image.asset(AppICons.moonIcon),
+                      ],
+                    ),
                   ),
                 ],
               ),
