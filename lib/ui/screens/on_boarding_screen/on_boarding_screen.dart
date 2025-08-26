@@ -1,5 +1,5 @@
 import 'package:dots_indicator/dots_indicator.dart';
-import 'package:evently/ui/screens/home_screen/home_screen.dart';
+import 'package:evently/ui/screens/home_screen/home_screen_profile.dart';
 import 'package:evently/ui/screens/on_boarding_screen/intro_widget.dart';
 import 'package:evently/ui/screens/on_boarding_screen/on_boarding_data.dart';
 import 'package:evently/ui/utils/app_colors.dart';
@@ -98,7 +98,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                       position: currentPageIndex.toDouble(),
                       decorator: DotsDecorator(
                         activeColor: AppColors.lightBlue,
-                        color: AppColors.darkGray,
+                        color: Theme.of(context).colorScheme.onSurface,
                         size: const Size.square(9.0),
                         activeSize: const Size(20.0, 9.0),
                         activeShape: RoundedRectangleBorder(
@@ -122,7 +122,7 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
                           } else {
                             Navigator.pushReplacementNamed(
                               context,
-                              HomeScreen.routeName,
+                              HomeScreenProfile.routeName,
                             );
                           }
                         },

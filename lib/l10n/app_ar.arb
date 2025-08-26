@@ -1,0 +1,23 @@
+{
+  "language": "اللغة",
+  "theme": "الثمة",
+  "arabic": "عربي",
+    "english": "إنجليزي",
+    "dark": "ليلي",
+  "email": "الإيميل",
+  "password": "كلمة المرور",
+  "re_password": "أعد كلمة المرور",
+  "user_name": "اسم المستخدم",
+    "light": "نهاري",
+    "login": "تسجيل الدخول",
+    "google_login": "تسجيل الدخول بواسطة جوجل",
+    "logout": "تسجيل الخروج",
+    "system": "تلقائي ",
+  "lets_start": "لنبدأ",
+  "choose_language": "اختر اللغة",
+  "choose_theme": "اخترالثمة",
+  "forget_password": "نسيت كلمة المرور؟",
+  "create_account": "إنشاء حساب",
+  "have_account": "لديك حساب بالفعل؟",
+  "don_not_have_account": "ليس لديك حساب؟"
+}
