@@ -7,4 +7,6 @@ class AppImages{
   static const String catOnBoardingImage = 'asset/images/cat_image_boarding.png';
   static const String manageEventOnBoardingImage = 'asset/images/manage_event_image.png';
   static const String connectFriendOnBoardingImage = 'asset/images/connect_with_friend_image.png';
+  static const String forgetPasswordImage = 'asset/images/forget_password_image.png';
+  static const String routeHomeProfile = 'asset/images/route_home.png';
 }

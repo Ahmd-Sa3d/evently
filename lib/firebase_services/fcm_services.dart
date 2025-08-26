@@ -2,6 +2,7 @@ import 'dart:developer';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
+@pragma('vm:entry-point')
 class FcmServices {
   static FirebaseMessaging messaging = FirebaseMessaging.instance;
 
@@ -10,6 +11,8 @@ class FcmServices {
   }
 
   static Future<void> requestPermission() async {
+    FirebaseMessaging messaging = FirebaseMessaging.instance;
+
     NotificationSettings settings = await messaging.requestPermission(
       alert: true,
       announcement: false,
@@ -30,20 +33,26 @@ class FcmServices {
     }
   }
 
-  static Future<String?> getToken() async {
+  static Future<String> getToken() async {
     String? token = await messaging.getToken();
-    log("FCM Token: $token");
-    return token;
+    if (token != null) {
+      log('FCM Token: $token');
+      return token;
+    } else {
+      log('Failed to get FCM token');
+      return '';
+    }
   }
 
   static Future<void> handlingMessage() async {
     const AndroidNotificationChannel channel = AndroidNotificationChannel(
-      'high_importance_channel',
-      'High Importance Notifications',
+      'high_importance_channel', // id
+      'High Importance Notifications', // title
       description: 'This channel is used for important notifications.',
       // description
       importance: Importance.max,
     );
+
     final FlutterLocalNotificationsPlugin flutterLocalNotificationsPlugin =
         FlutterLocalNotificationsPlugin();
 
@@ -52,6 +61,7 @@ class FcmServices {
           AndroidFlutterLocalNotificationsPlugin
         >()
         ?.createNotificationChannel(channel);
+
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification? notification = message.notification;
       AndroidNotification? android = message.notification?.android;
@@ -73,7 +83,14 @@ class FcmServices {
             ),
           ),
         );
+
+
       }
+
     });
+
+
   }
+
+
 }
